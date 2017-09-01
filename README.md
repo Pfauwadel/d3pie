@@ -3,7 +3,7 @@
 ### Fork from d3pie
 
 Get thinks working responsive with bootstrap
-
+```
 <div class="panel panel-default">
     <div class="panel-body">
         <div style="text-align:center;" class="row">
@@ -12,7 +12,8 @@ Get thinks working responsive with bootstrap
         </div>
     </div>
 </div>
-
+```
+```
 <script type="text/javascript">
   var dataGP = [];
   
@@ -87,6 +88,7 @@ Get thinks working responsive with bootstrap
         });
   }
 </script>
+```
 
 ### DEVELOPERS wanted! 
 
