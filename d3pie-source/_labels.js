@@ -84,9 +84,9 @@ var labels = {
 				.text(function(d, i) {
 					formatterContext.index = i;
 					formatterContext.part = "value";
-					formatterContext.value = d.value;
-					formatterContext.label = d.value;
-					return settings.formatter ? settings.formatter(formatterContext, d.value) : d.value;
+					formatterContext.value = d.number;
+					formatterContext.label = d.number;
+					return settings.formatter ? settings.formatter(formatterContext, d.number) : d.number;
 				})
 				.style("font-size", settings.value.fontSize + "px")
 				.style("font-family", settings.value.font)
