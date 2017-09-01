@@ -31,6 +31,8 @@ var segments = {
 		var arc = d3.arc()
 			.innerRadius(pie.innerRadius)
 			.outerRadius(pie.outerRadius)
+			.cornerRadius(pie.options.size.pieCornerRadius)
+			.padAngle(pie.options.size.piePadAngle)
 			.startAngle(0)
 			.endAngle(function(d) {
 				return (d.value / pie.totalSize) * 2 * Math.PI;
