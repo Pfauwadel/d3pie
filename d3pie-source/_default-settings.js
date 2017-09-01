@@ -30,8 +30,10 @@ var defaultSettings = {
 	size: {
 		canvasHeight: 500,
 		canvasWidth: 500,
-		pieInnerRadius: "0%",
-		pieOuterRadius: null
+		pieInnerRadius: "40%",
+		pieOuterRadius: null,
+		pieCornerRadius :0,
+		piePadAngle:0.00
 	},
 	data: {
 		sortOrder: "none",
