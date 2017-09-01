@@ -17,6 +17,9 @@ Get thinks working responsive with bootstrap
 <script type="text/javascript">
   var dataGP = [];
   
+  //Make some stuff to get some data back
+  processData("My Super Pie", "pieGPChart", data);
+  
   function processData(title, chartDivId, dataResponse)
   {
     $("#pieGPLegend").text(title);
