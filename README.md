@@ -1,5 +1,93 @@
 ## d3pie
 
+### Fork from d3pie
+
+Get thinks working responsive with bootstrap
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div style="text-align:center;" class="row">
+            <h4 id="pieGPLegend"></h4>
+            <div id="pieGPChart"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  var dataGP = [];
+  
+  function processData(title, chartDivId, dataResponse)
+  {
+    $("#pieGPLegend").text(title);
+    var width = $("#pieGPChart").width();
+    var dividor = 2;
+    var height = width / dividor;
+    var fontSize = 6;
+    $("#pieGPChart").height(height);
+    
+    //Fill my data from my response
+    $.each(dataResponse.Data, function (d, i) {
+       dataGP.push({ label: i.label, value: i.value, number: i.number });
+    });
+    
+    pieGroup = new d3pie("pieGPChart", {
+            "size": {
+                "canvasHeight": height,
+                "canvasWidth": width,
+                "pieOuterRadius": "40%",
+                "pieCornerRadius": 7,
+                "piePadAngle": 0.02
+            },
+            "data": {
+                "content": dataGroupPotential
+            },
+            "labels": {
+                "outer": {
+                    "format": "label-value2",
+                    "pieDistance": 12
+                },
+                "inner": {
+                    "hideWhenLessThanPercentage": 2
+                },
+                "mainLabel": {
+                    "fontSize": fontSize
+                },
+                "percentage": {
+                    "color": "#ffffff",
+                    "decimalPlaces": 0,
+                    "fontSize": fontSize
+                },
+                "value": {
+                    "color": "#adadad",
+                    "fontSize": fontSize
+                },
+                "lines": {
+                    "enabled": true
+                },
+                "truncation": {
+                    "enabled": true
+                }
+            },
+            "tooltips": {
+                "enabled": true,
+                "type": "placeholder",
+                "string": "{label}: {percentage}%",
+                "styles": {
+                    "fadeInSpeed": 300,
+                    "backgroundOpacity": 0.75,
+                    "fontSize": fontSize
+                }
+            },
+            "misc": {
+                "gradient": {
+                    "enabled": true,
+                    "percentage": 75
+                }
+            }
+        });
+  }
+</script>
+
 ### DEVELOPERS wanted! 
 
 I'm not able to spend the time I'd like on this project and it's slowly fallen into neglect. If any developers would like to take on the project (especially addressing the issues reported), I'd welcome an email at ben.keen@gmail.com
